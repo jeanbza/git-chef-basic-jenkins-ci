@@ -1,0 +1,7 @@
+{
+  "run_list": [
+    "role[java]",
+    "role[jenkins]",
+    "role[ruby]"
+  ]
+}
