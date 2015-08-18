@@ -20,9 +20,10 @@ rbenv_gem 'bundler' do
     ruby_version ruby_ver
 end
 
-execute "set ruby global version to #{ruby_ver}" do
-    command "rbenv global #{ruby_ver}"
-end
+# TODO: This may be unnecessary
+# execute "set ruby global version to #{ruby_ver}" do
+#     command "rbenv global #{ruby_ver}"
+# end
 
 # TODO: This may be unnecessary
 # execute 'open up rbenv directory for jenkins to use' do
