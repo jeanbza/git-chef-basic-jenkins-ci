@@ -3,14 +3,13 @@
     <actions/>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    <properties>
-    </properties>
-    <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.6">
+    <properties/>
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@2.3.5">
         <configVersion>2</configVersion>
         <userRemoteConfigs>
             <hudson.plugins.git.UserRemoteConfig>
                 <url><%= @git_repo %></url>
-                <credentialsId>aaaaaaaa-bbbb-cccc-ddd-eeeeeeeeeeee</credentialsId>
+                <credentialsId>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</credentialsId>
             </hudson.plugins.git.UserRemoteConfig>
         </userRemoteConfigs>
         <branches>
@@ -33,22 +32,9 @@
         </hudson.triggers.SCMTrigger>
     </triggers>
     <concurrentBuild>false</concurrentBuild>
-    <builders>
-        <hudson.plugins.gradle.Gradle plugin="gradle@1.24">
-            <description></description>
-            <switches></switches>
-            <tasks>clean build</tasks>
-            <rootBuildScriptDir></rootBuildScriptDir>
-            <buildFile></buildFile>
-            <gradleName>(Default)</gradleName>
-            <useWrapper>true</useWrapper>
-            <makeEDOMcutable>false</makeEDOMcutable>
-            <fromRootBuildScriptDir>true</fromRootBuildScriptDir>
-            <useWorkspaceAsHome>false</useWorkspaceAsHome>
-        </hudson.plugins.gradle.Gradle>
-    </builders>
     <publishers>
         <hudson.tasks.BuildTrigger>
+            <childProjects><%= @app_name %>IntegrationTests</childProjects>
             <threshold>
                 <name>SUCCESS</name>
                 <ordinal>0</ordinal>

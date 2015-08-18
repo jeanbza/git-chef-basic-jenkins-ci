@@ -1,7 +1,7 @@
 # git-chef-basic-jenkins-ci
 Chef solo scripts to launch a basic jenkins CI on AWS
 
-## Setup
+## Initial Setup
 
 1. Launch an AWS RedHat instance (default as of this writing is RHEL7.1)
 1. SSH into newly created instance
@@ -18,5 +18,14 @@ Chef solo scripts to launch a basic jenkins CI on AWS
   1. `sudo yum install wget`
   1. `wget https://opscode-omnibus-packages.s3.amazonaws.com/el/7/x86_64/chefdk-0.7.0-1.el7.x86_64.rpm`
   1. `sudo rpm -Uvh chefdk-0.7.0-1.el7.x86_64.rpm`
-1. `berks install`
+1. `berks install && berks vendor cookbooks/`
 1. `sudo chef-solo -c solo.rb -j runlist.json`
+
+## Subsequent Reprovisioning
+
+1. SSH into your instance
+1. `cd git-chef-basic-jenkins-ci && git pull && sudo chef-solo -c solo.rb -j runlist.json`
+
+## Feedback and suggestions
+
+Please feel free to submit issues and pull requests, or email me at [jadekler@gmail.com](jadekler@gmail.com).

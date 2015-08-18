@@ -16,7 +16,7 @@ def create_test_jobs(app_name, git_repo)
     # PLEASE NOTE: You WILL need to set up your own credentials
     template build_job do
         source 'build-job.xml.erb'
-        variables({:git_repo => git_repo})
+        variables({:app_name => app_name, :git_repo => git_repo})
     end
 
     jenkins_job "#{app_name}Build" do
