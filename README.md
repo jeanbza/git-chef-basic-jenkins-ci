@@ -24,6 +24,8 @@ and absolutely should mess with this in your own fork to whatever suits your nee
   1. `sudo rpm -Uvh chefdk-0.7.0-1.el7.x86_64.rpm`
 1. `berks install && berks vendor cookbooks/`
 1. `sudo chef-solo -c solo.rb -j runlist.json`
+1. Navigate to `your.instance.ip.address:9090`. You're done!
+1. (optional) Assign an elastic IP to your instance so that the address does not periodically change
 
 ## Subsequent Reprovisioning
 
