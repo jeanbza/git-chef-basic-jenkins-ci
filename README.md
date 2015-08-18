@@ -14,4 +14,9 @@ Chef solo scripts to launch a basic jenkins CI on AWS
 1. `rbenv global 2.1.2`
 1. `curl -L https://www.opscode.com/chef/install.sh | sudo bash`
 1. `git clone https://github.com/jadekler/git-chef-basic-jenkins-ci.git && cd git-chef-basic-jenkins-ci`
-1. 
+1. [Install berkshelf](https://downloads.chef.io/chef-dk/redhat/#/) (steps below to save you time)
+  1. `sudo yum install wget`
+  1. `wget https://opscode-omnibus-packages.s3.amazonaws.com/el/7/x86_64/chefdk-0.7.0-1.el7.x86_64.rpm`
+  1. `sudo rpm -Uvh chefdk-0.7.0-1.el7.x86_64.rpm`
+1. `berks install`
+1. `sudo chef-solo -c solo.rb -j runlist.json`
