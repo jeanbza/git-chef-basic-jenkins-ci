@@ -1,5 +1,8 @@
 # git-chef-basic-jenkins-ci
-Chef solo scripts to launch a basic jenkins CI on AWS
+Chef solo scripts to launch a basic jenkins CI on AWS.
+
+This sets up a build running java unit tests and ruby rspec tests, but you can
+and absolutely should mess with this in your own fork to whatever suits your needs!
 
 ## Initial Setup
 
@@ -25,6 +28,14 @@ Chef solo scripts to launch a basic jenkins CI on AWS
 
 1. SSH into your instance
 1. `cd git-chef-basic-jenkins-ci && git pull && sudo chef-solo -c solo.rb -j runlist.json`
+
+## Some notes
+
+- The ruby recipes could probably be removed because it's part of the setup, but
+I figure this repo might be useful in a Vagrant setup, which that would not have
+been installed ahead of time. Feel free to remove in your own setup or fork.
+- Echoing things into bash_profile is pretty terrible. Will remove at some point
+unless someone beats me to it with a PR.
 
 ## Feedback and suggestions
 
