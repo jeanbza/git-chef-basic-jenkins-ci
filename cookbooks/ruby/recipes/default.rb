@@ -31,7 +31,8 @@ end
 #     user 'root'
 # end
 
-# TODO: remove bash profile appending
+# TODO: This may be unnecessary
+# TODO: Remove bash profile appending
 execute 'add LD_LIBRARY_PATH to vagrant bash profile' do
     command "echo 'export LD_LIBRARY_PATH=/usr/local/lib' >> /home/ec2-user/.bash_profile"
 end
