@@ -7,7 +7,7 @@ and absolutely should mess with this in your own fork to whatever suits your nee
 ## Initial Setup
 
 1. Launch an AWS RedHat instance (default as of this writing is RHEL7.1)
-1. Be sure that your AWS instance has ports 22 (SSH), 80 (HTTP), and 9090 (jenkins) open to inbound in its security group
+1. Open ports 22 (SSH), 80 (HTTP), and 9090 (jenkins) to inbound in your AWS security group settings
 1. SSH into newly created instance
 1. `sudo yum install git`
 1. [Install rbenv via git](https://github.com/sstephenson/rbenv#basic-github-checkout)
